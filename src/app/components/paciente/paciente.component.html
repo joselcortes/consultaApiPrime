@@ -1,0 +1,44 @@
+<h1 class="text-center text-4xl" >Consulta Información de Pacientes</h1>
+<div class="bordesolido">
+  <div class="divinterno">
+    <h1 class="text-2xl">INGRESE RUN</h1>
+    <input type="text"
+         #txtInput
+         maxlength="12"
+         [(ngModel)]="run" (change)="formatearRun(txtInput.value)"
+         class="text-center focus:outline-dotted w-56 mt-4" pInputText
+         placeholder="xxxxxxxx-x"
+         (keyup.enter)="validarRun( txtInput.value )"
+         (keypress)="check($event)"
+    />
+
+    <p-button (click)="validarRun( txtInput.value )" class="ml-2" icon="pi pi-search" styleClass="p-button-info"
+      pTooltip="Realizar consulta" tooltipPosition="right"></p-button>
+
+    <div>
+        <p-toast></p-toast>
+    </div>
+
+  </div>
+  <!-- <div id="run-invalido" class=" text-red-500 mr-8" *ngIf="mostrarDiv" [hidden]="false">
+    {{mensaje}}
+  </div>
+
+  <div *ngIf="consultaApi" [hidden]="false">
+    <h3 class="mt-8 text-center text-red-500 h-8">{{mensajeCarga}}</h3>
+  </div> -->
+
+  <div>
+    <div *ngIf="isLoad && mostrarTable === false" [hidden]="false" class="">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+
+    <div *ngIf="mostrarTable && paciente" [hidden]="false" >
+      <app-info-paciente-api *ngIf="paciente" [paciente]="paciente" [botonConsulta]="botonConsultaFonasa"></app-info-paciente-api>
+    </div>
+  </div>
+
+
+</div>
+
+

@@ -1,0 +1,45 @@
+.bordesolido{
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  /* padding: 50px; */
+  justify-content: center;
+  text-align: center;
+  /* border-style: solid; */
+  /* margin-left: 12%; */
+
+}
+.lol{
+  display: flex;
+  justify-content: center;
+}
+.divinterno{
+  /* box-shadow: 0 0 15px #ddd; */
+  /* background: #fff; */
+  border-radius: 8px;
+  padding: 2% 10%;
+  /* padding: 5% 10% 5% 10%; */
+  /* border-color: #aaaaaa; */
+  /* border-width: 1px; */
+  text-align: center;
+}
+/* .fondo{
+  background-color: rgb(253, 254, 255);
+  }
+*/
+/* .sin-resultados{
+  width: 80%;
+  margin-left: 12%;
+  margin-top: 5%;
+} */
+/* .errorInput{
+  box-shadow: 0 0 2px red;
+  border-color: red;
+} */
+
+
+
+@media screen {
+
+}

@@ -1,0 +1,81 @@
+<div class="bordesolido ">
+  <div class="divinterno">
+    <div class="grid grid-cols-2">
+      <h1 class="text-xl font-bold">Información de: {{ paciente.nombre + ' ' +paciente.apellido_paterno +' '+ paciente.apellido_materno}}</h1>
+
+        <div class="text-end">
+          <p-button
+            [disabled]="botonConsulta"
+            (onClick)="obtenerPacientePorFonasa(paciente.run)"
+            class=""
+            pTooltip="Mostrar Información restante desde fonasa" tooltipPosition="right"
+            styleClass="p-button-info">
+            Consultar a Fonasa
+          </p-button>
+        </div>
+        <div>
+          <p-toast></p-toast>
+      </div>
+    </div>
+    <p-divider></p-divider>
+
+    <div class="grid grid-rows-3 md:grid-rows-3 gap-3 items-start">
+      <div class="grid grid-cols-3 md:items-center gap-10">
+        <div>
+          <p>Nombres </p>
+            <strong>{{paciente.nombre}}</strong>
+        </div>
+        <div >
+          <p>Apellido Paterno:</p>
+            <strong>{{paciente.apellido_paterno}}</strong>
+        </div>
+        <div>
+          <p>Apellido Materno:</p>
+            <strong>{{paciente.apellido_materno}}</strong>
+        </div>
+      </div >
+
+      <div class="grid grid-cols-3 md:items-center gap-10">
+        <div>
+          <p>Fecha de nacimiento:</p>
+          <strong>{{paciente.fecha_nacimiento | date:'dd/MM/yyyy':'es-CL'}}</strong>
+        </div>
+        <div>
+          <p>Genero:</p>
+            <strong>{{paciente.sexo}}</strong>
+        </div>
+        <div >
+          <p>Prevision:</p>
+            <strong>{{paciente.prevision.nombre}} </strong>
+            <strong>{{paciente.prevision.tramo}}</strong>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 md:items-center gap-10">
+        <div>
+          <p>Teléfono:</p>
+            <strong>{{paciente.telefono}}</strong>
+        </div>
+        <div >
+            <p>Dirección:</p>
+            <strong>{{paciente.direccion}}</strong>
+        </div>
+        <div >
+          <p>Comuna:</p>
+            <strong>{{paciente.comuna.nombre}}</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<p-dialog [(visible)]="visible" [modal]="true" [closable]="false" [style]="{ width: 'auto' }">
+  <p-progressSpinner></p-progressSpinner>
+</p-dialog>
+
+<!-- <div *ngIf="consultaApi" [hidden]="false">
+  <h3 class="mt-8 text-center text-red-500 h-8">{{mensajeCarga}}</h3>
+</div> -->
